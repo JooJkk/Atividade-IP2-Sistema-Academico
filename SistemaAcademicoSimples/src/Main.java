@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
     Professor p1 = new Professor("joelson", "programacao");
     Curso c1 = new Curso("ip2", 60, p1);
