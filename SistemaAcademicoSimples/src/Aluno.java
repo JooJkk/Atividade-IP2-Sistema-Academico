@@ -1,15 +1,15 @@
 public class Aluno {
     private String nome;
     private int idade;
-    private Curso curso;
+    private Curso[] curso;
 
-    public Aluno(String nome, int idade, Curso curso){
+    public Aluno(String nome, int idade, Curso[] curso) {
         this.nome = nome;
         this.idade = idade;
         this.curso = curso;
     }
 
-    public Aluno(String nome, int idade){
+    public Aluno(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
     }
@@ -30,7 +30,7 @@ public class Aluno {
         this.idade = idade;
     }
 
-    public Curso getCurso() {
+    public Curso[] getCurso() {
         return curso;
     }
 
@@ -38,17 +38,18 @@ public class Aluno {
         this.curso = curso;
     }
 
-    public void exibirInfo() {
-        IO.println("Aluno: " + nome + " | " + "Idade: " + idade);
+    public void exibirInfo(){
+        System.out.println("Nome: "+nome+" | "+"Idade: "+idade);
         if (curso!=null){
-            IO.println("Curso: " + curso.getNome() + " | " + "Carga Horária: " + curso.getCargaHoraria() + "h");
-            if (curso.getProfessor()!=null){
-                IO.println("Professor" + curso.getProfessor().getNome() + " | " + "Especialidade: " + curso.getProfessor().getEspecialidade());
+            int lg = curso.length;
+            for(int i=0;i<lg;i++){
+                int j=i+1;
+                IO.println("Curso "+j+": "+curso[i].getNome()+" | "+"Carga Horária: "+curso[i].getCargaHoraria()+"h | "+"Professor: "+curso[i].getProfessor().getNome());
             }
         }
         else{
-            IO.println("Nenhum curso associado");
+            IO.println("Nenhum curso associado.");
         }
-        IO.println("-------------------------------------");
+        IO.println("-------------------");
     }
 }
